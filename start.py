@@ -32,6 +32,7 @@ of source code from this file.
 from sys import argv
 
 from jeoparpy import config
+from jeoparpy.selectMenu import *
 from jeoparpy.constants import (DEBUG_FLAG, FULLSCREEN_FLAG, SKIP_INTRO_FLAG, 
     WINDOWED_FLAG)
 
@@ -47,6 +48,7 @@ optionsMap = {
 }
 
 if __name__ == '__main__':
+    select_game()
     flags = set(optionsMap[o] for o in argv if o in optionsMap)
     
     # Override config options if args provided

@@ -251,9 +251,12 @@ Display/General game settings:
 
 Clues/Categories/Edition Title/Player Names/Clue Amounts/Rules:
 ---------------------------------------------------------------
-* The files for these are all located in ``<jeoparpy root>/res/text/``
+* The files for these are all located in ``<jeoparpy root>/games/``
+* In each folder of the games directory there is a game.
 * Each file has sample data included.
-* Instructions for each are found in ``/res/text/INSTRUCTIONS.txt``
+* Rename a folder in the games directory to rename a game.
+* Maximum of four (4) games. Minimum of one (1) game.
+* Instructions for each are found in ``/games/<game>/INSTRUCTIONS.txt``
   
 Clue Audio/Images
 -----------------

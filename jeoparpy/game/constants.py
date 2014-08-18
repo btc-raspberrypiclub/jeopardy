@@ -17,7 +17,10 @@ from os import path
 
 from ..constants import ROOT_PATH
 
-_textPath = path.join(ROOT_PATH, 'res', 'text', '')
+file = open(ROOT_PATH + '\\jeoparpy\\dir.txt', 'r')
+directory = file.readline()
+
+_textPath = path.join(ROOT_PATH, 'games', directory, '')
 
 AMOUNTS_PATH = _textPath + 'amounts.txt'
 CLUES_PATH = _textPath + 'clues.txt'

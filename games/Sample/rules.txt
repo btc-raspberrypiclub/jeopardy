@@ -1,0 +1,4 @@
+* One ring-in per team, per turn
+* Answer must be read in full before ring-in
+* Responses must be in form of a question
+* No daily doubles

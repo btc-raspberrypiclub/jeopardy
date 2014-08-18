@@ -20,8 +20,11 @@ from os import path
 from ..constants import ROOT_PATH
 from ..util import get_first_textline, get_stripped_nonempty_file_lines
 
-_rulesPath = path.join(ROOT_PATH, 'res', 'text', 'rules.txt')
-_subPath = path.join(ROOT_PATH, 'res', 'text', 'subtitle.txt')
+file = open(ROOT_PATH + '\\jeoparpy\\dir.txt', 'r')
+directory = file.readline()
+
+_rulesPath = path.join(ROOT_PATH, 'games', directory, 'rules.txt')
+_subPath = path.join(ROOT_PATH, 'games', directory, 'subtitle.txt')
 
 JEOP_BLUE = (16, 26, 124) # RGB color
 SUBTITLE = get_first_textline(_subPath)
