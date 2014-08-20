@@ -20,7 +20,7 @@ from os import path
 from ..constants import ROOT_PATH
 from ..util import get_first_textline, get_stripped_nonempty_file_lines
 
-file = open(ROOT_PATH + '\\jeoparpy\\dir.txt', 'r')
+file = open(path.join(ROOT_PATH, 'jeoparpy', 'dir.txt'), 'r')
 directory = file.readline()
 
 _rulesPath = path.join(ROOT_PATH, 'games', directory, 'rules.txt')

@@ -25,14 +25,14 @@ class Select_Game():
         self.clicked = None
         #Setup select game text
         pygame.Surface.set_alpha(self.screen)
-        self.jeopFont = pygame.font.Font(ROOT_PATH + '\\res\\fonts\\gyparody.ttf', 53)
+        self.jeopFont = pygame.font.Font(os.path.join(ROOT_PATH, 'res', 'fonts', 'gyparody.ttf'), 53)
         self.selectText = self.jeopFont.render('Select Game', True, self.WHITE)
         self.selectRect = self.selectText.get_rect()
         self.selectRect.centerx = 300
         self.selectRect[1] = 70
                
         #Setup Background Image
-        self.backgroundImage = pygame.image.load(ROOT_PATH + '\\res\images\introbg.png')
+        self.backgroundImage = pygame.image.load(os.path.join(ROOT_PATH,'res', 'images', 'introbg.png'))
         self.backgroundRect = self.backgroundImage.get_rect()
         self.backgroundRect.centerx = 300
         self.backgroundRect.centery = 250
@@ -49,7 +49,7 @@ class Select_Game():
         return self.clicked
 
     def get_options(self):
-        self.options = os.listdir(ROOT_PATH + '/games')
+        self.options = os.listdir(os.path.join(ROOT_PATH, 'games'))
         self.options.remove('README.txt')
         self.games = len(self.options)
         if self.games > 4:
@@ -60,7 +60,7 @@ class Select_Game():
             sys.exit()
 
     def save(self, clicked):
-        file = open(ROOT_PATH + '\\jeoparpy\\dir.txt', 'w')
+        file = open(os.path.join(ROOT_PATH, 'jeoparpy', 'dir.txt'), 'w')
         file.write(clicked)
         file.close()
         

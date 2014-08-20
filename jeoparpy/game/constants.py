@@ -17,7 +17,7 @@ from os import path
 
 from ..constants import ROOT_PATH
 
-file = open(ROOT_PATH + '\\jeoparpy\\dir.txt', 'r')
+file = open(path.join(ROOT_PATH, 'jeoparpy', 'dir.txt'), 'r')
 directory = file.readline()
 
 _textPath = path.join(ROOT_PATH, 'games', directory, '')
