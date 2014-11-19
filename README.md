@@ -1,5 +1,5 @@
-#JeoparPy 
-Version 0.10 Beta
+#Jeopardy Pi Edition
+Version 0.1.0 Beta
 
 ##Software Quick Start for Raspberry Pi
 1. Flash the latest edition of Raspbian to your Raspberry Pi.
