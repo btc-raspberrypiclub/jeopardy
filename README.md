@@ -10,17 +10,18 @@ Version 0.10 Beta
 The software should start up for you to mess around with.
 
 #Setup Your Own Game
-JeoparPy does not come with any set(s) of questions/catagories so you must add them in.
-1. Navigate to the games directory with the command `cd JeoparPy/games`
+JeoparPy does not come with any set(s) of questions/catagories so you must add them in. </br>
+
+1. Navigate to the games directory with the command `cd JeoparPy/games`</br>
 2. Each of the four directories in this directory are games. Rename one of them to the name you desire. (For 
-example, "American History")
-3. Enter the game directory you just renamed. Open the file `players.txt`
-4. Each line of the file is a player/team name. Change a line to change the name. Save the file.
-5. Open the file `clues.txt`
+example, "American History")</br>
+3. Enter the game directory you just renamed. Open the file `players.txt`</br>
+4. Each line of the file is a player/team name. Change a line to change the name. Save the file.<br/>
+5. Open the file `clues.txt`</br>
 6. Every line is a question. The first 5 lines are for the first category. The next 5 lines are for the second 
-catagory and so on.
+catagory and so on.</br>
 7. Close and save the file. Finally open the `catgories.txt` file. Each line of this file is a category. Change
-at will.
+at will.</br>
 
 HOW TO HOST A GAME
 ==================
@@ -47,7 +48,7 @@ immediately, and players can not buzz in until it has finished playing.
 
 When a clue box is open, a player is buzzed in by pressing their corresponding
 number on the keyboard. Example: To buzz-in player 2, press '2' on your 
-keyboard. It is recommended to map a controller of some kind to these keys. See Connecting Hardware
+keyboard. It is recommended to map a controller of some kind to these keys. <a href="https://github.com/spadgenske/Jeopardy#connecting-hardware">See Connecting Hardware</a>
 
 When a player is buzzed in, one of three things can happen:
 
