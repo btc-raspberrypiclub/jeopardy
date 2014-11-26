@@ -169,7 +169,7 @@ class SimpleCreditLine(CreditLine):
         self.rect = self.image.get_rect()
 
 ###############################################################################
-positions = ('Programmer/Designer',
+positions = ('Programmer/Designer', 'Programmer',
              'Research',
              'Research Assistant',
              'Writer',
@@ -183,7 +183,7 @@ positions = ('Programmer/Designer',
              'Assistant to Mr. Madill'
              )
 
-names = ('Adam Beagle',
+names = ('Adam Beagle','Tyler Spadgenske',
          'Claire Madill',
          "Starla 'Kitty Kitty' Warla",
          'Adam Beagle',
@@ -204,7 +204,6 @@ final = ('Catering by',
          '',
          'Brought to you by',
          'Lamonster Solutions',
-         pygame.image.load(IMAGES['lamonster']),
          )
 
 def do_credits(screen, clock, audioPlayer, fpsLimit):

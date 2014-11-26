@@ -67,7 +67,6 @@ def main(*flags):
         # Events
         handle_events(gs, gameData, uicontroller)
         if gs.state == gs.QUIT:
-            print 'exiting...'
             pygame.quit()
             sys.exit()
 

@@ -27,5 +27,5 @@ _rulesPath = path.join(ROOT_PATH, 'games', directory, 'rules.txt')
 _subPath = path.join(ROOT_PATH, 'games', directory, 'subtitle.txt')
 
 JEOP_BLUE = (16, 26, 124) # RGB color
-SUBTITLE = get_first_textline(_subPath)
+SUBTITLE = 'Pi Edition'
 RULES = get_stripped_nonempty_file_lines(_rulesPath)

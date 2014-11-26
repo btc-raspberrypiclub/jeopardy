@@ -66,12 +66,7 @@ _cluesPath = path.join(ROOT_PATH, 'res', 'sounds', 'clues', '')
 # WARNING: If creating your own game, delete the sample lines in this
 #          dictionary. If not using clue images, change the line
 #          below to: IMAGES = {}
-IMAGES = {(0, 3)   : _imgPath + 'test_img.png',
-          (1, 3)   : _imgPath + 'test_img.png',
-          (2, 3)   : _imgPath + 'test_img.png',
-          (3, 3)   : _imgPath + 'test_img.png',
-          (4, 3)   : _imgPath + 'test_img.png',
-          }
+IMAGES = {}
 
 ###############################################################################
 # INSTRUCTIONS TO ADD YOUR OWN RECORDED CLUE READINGS OR AUDIO CLUES:
@@ -110,22 +105,12 @@ IMAGES = {(0, 3)   : _imgPath + 'test_img.png',
 # WARNING: If creating your own game, delete the sample lines in this
 #          dictionary. If not using audio clue readings, change the line
 #          below to: CLUE_READS = {}
-CLUE_READS = {(0, 2) : _cluesPath + 'sample_read.ogg',
-              (1, 2) : _cluesPath + 'sample_read.ogg',
-              (2, 2) : _cluesPath + 'sample_read.ogg',
-              (3, 2) : _cluesPath + 'sample_read.ogg',
-              (4, 2) : _cluesPath + 'sample_read.ogg',
-              }
+CLUE_READS = {}
 
 # WARNING: If creating your own game, delete the sample lines in this
 #          dictionary. If not using audio clues, change the line below
 #          to: SOUNDS = {}
-SOUNDS = {(0, 4) : _sndPath + 'sample_music.ogg',
-          (1, 4) : _sndPath + 'sample_music.ogg',
-          (2, 4) : _sndPath + 'sample_music.ogg',
-          (3, 4) : _sndPath + 'sample_music.ogg',
-          (4, 4) : _sndPath + 'sample_music.ogg',
-          }
+SOUNDS = {}
 
 
 
