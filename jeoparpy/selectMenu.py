@@ -37,11 +37,11 @@ class Select_Game():
         self.backgroundRect.centerx = 300
         self.backgroundRect.centery = 250
 
-    def main(self, event=None):
         self.screen.blit(self.backgroundImage, self.backgroundRect)
 
         self.screen.blit(self.selectText, self.selectRect)
         
+    def main(self, event=None):        
         #Blit Selection
         self.get_options()
         self.blitBlocks(self.options, event)

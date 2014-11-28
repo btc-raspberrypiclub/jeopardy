@@ -97,7 +97,7 @@ def _blit_subtitle(background, scrRect, titleRect):
 
 def _build_background(scrSize):
     background = pygame.image.load(IMAGES['introBG']).convert()
-    background = pygame.transform.smoothscale(background, scrSize)
+    background = pygame.transform.scale(background, scrSize)
 
     return background, background.get_rect()
 

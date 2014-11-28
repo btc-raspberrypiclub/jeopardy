@@ -73,7 +73,7 @@ class PodiaPanel(JeopGameSurface):
     def _init_background(self):
         img = pygame.image.load(IMAGES['rPanelBG']).convert()
         sizeScalar = float(self.size[1]) / img.get_size()[1]
-        img = pygame.transform.smoothscale(img, self.size)
+        img = pygame.transform.scale(img, self.size)
         self.blit(img, (0, 0))
 
         return sizeScalar
