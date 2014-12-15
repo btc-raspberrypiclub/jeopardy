@@ -42,7 +42,7 @@ def main(*flags):
     
     screen = pygame.display.set_mode(SCREEN_SIZE,
                                      pygame.FULLSCREEN if FULLSCREEN else 0)
-    pygame.display.set_caption('JeoparPy!')
+    pygame.display.set_caption('Jeopardy!')
 
     # Declarations
     gameData = GameData()

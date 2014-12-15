@@ -4,6 +4,9 @@
 import pygame, sys, os
 from pygame.locals import *
 from constants import ROOT_PATH
+from config import DRIVE
+
+print DRIVE
 
 pygame.init()
 

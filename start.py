@@ -32,9 +32,8 @@ of source code from this file.
 from sys import argv
 
 from jeoparpy import config
-from jeoparpy.selectMenu import *
 from jeoparpy.constants import (DEBUG_FLAG, FULLSCREEN_FLAG, SKIP_INTRO_FLAG, 
-    WINDOWED_FLAG)
+    WINDOWED_FLAG, DRIVE_FLAG)
 
 optionsMap = {
     '-d'           : DEBUG_FLAG,
@@ -45,10 +44,10 @@ optionsMap = {
     '--skip-intro' : SKIP_INTRO_FLAG,
     '-w'           : WINDOWED_FLAG,
     '--windowed'   : WINDOWED_FLAG,
+    '--drive'       : DRIVE_FLAG,
 }
 
 if __name__ == '__main__':
-    select_game()
     flags = set(optionsMap[o] for o in argv if o in optionsMap)
     
     # Override config options if args provided
@@ -58,9 +57,14 @@ if __name__ == '__main__':
         config.FULLSCREEN = 0
     if DEBUG_FLAG in flags:
         config.DEBUG = 1
-    
+    if DRIVE_FLAG in flags:
+        config.DRIVE = True
+
     # main MUST be imported here, or config options may be imported
     # (via 'from config import X') prior to being overridden by argv 
     # options.
     from jeoparpy.main import main
+    from jeoparpy.selectMenu import *
+    select_game()
     main(*flags)
+    print config.DRIVE

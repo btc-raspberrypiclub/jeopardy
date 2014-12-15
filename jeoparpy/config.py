@@ -75,3 +75,6 @@ SUBTRACT_ON_INCORRECT = True
 # Note this setting, if False here, can be overridden py passing 
 # a -d or --debug option to start.py
 DEBUG = False
+
+#Flash drive
+DRIVE = False
