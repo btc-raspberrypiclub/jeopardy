@@ -37,3 +37,5 @@ pip-log.txt
 
 #Translations
 *.mo
+
+jeoparpy/dir.txt
