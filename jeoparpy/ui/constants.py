@@ -15,16 +15,22 @@ viewable at http://opensource.org/licenses/GPL-3.0
 This copyright notice must be retained with any use
 of source code from this file.
 """
-from os import path
+from os import path, listdir
 
 from ..constants import ROOT_PATH
 from ..util import get_first_textline, get_stripped_nonempty_file_lines
+from ..config import DRIVE
 
 file = open(path.join(ROOT_PATH, 'jeoparpy', 'dir.txt'), 'r')
 directory = file.readline()
 
-_rulesPath = path.join(ROOT_PATH, 'games', directory, 'rules.txt')
-_subPath = path.join(ROOT_PATH, 'games', directory, 'subtitle.txt')
+if DRIVE == False:
+    _rulesPath = path.join(ROOT_PATH, 'games', directory, 'rules.txt')
+    _subPath = path.join(ROOT_PATH, 'games', directory, 'subtitle.txt')
+else:
+    DEVICE = listdir('/media')[0]
+    _rulesPath = path.join('/media', DEVICE, 'games', directory, 'rules.txt')
+    _subPath = path.join('/media', DEVICE, 'games', directory, 'subtitle.txt')
 
 JEOP_BLUE = (16, 26, 124) # RGB color
 SUBTITLE = 'Pi Edition'

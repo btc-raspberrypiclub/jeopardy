@@ -13,14 +13,19 @@ viewable at http://opensource.org/licenses/GPL-3.0
 This copyright notice must be retained with any use
 of source code from this file.
 """
-from os import path
+from os import path, listdir
 
 from ..constants import ROOT_PATH
+from ..config import DRIVE
 
 file = open(path.join(ROOT_PATH, 'jeoparpy', 'dir.txt'), 'r')
 directory = file.readline()
 
-_textPath = path.join(ROOT_PATH, 'games', directory, '')
+if DRIVE == False:
+    _textPath = path.join(ROOT_PATH, 'games', directory, '')
+else:
+    DEVICE = listdir('/media')[0]
+    _textPath = path.join('/media', DEVICE, 'games', directory, '')
 
 AMOUNTS_PATH = _textPath + 'amounts.txt'
 CLUES_PATH = _textPath + 'clues.txt'

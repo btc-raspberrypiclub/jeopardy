@@ -6,8 +6,6 @@ from pygame.locals import *
 from constants import ROOT_PATH
 from config import DRIVE
 
-print DRIVE
-
 pygame.init()
 
 WINDOWWIDTH = 600
@@ -52,8 +50,14 @@ class Select_Game():
         return self.clicked
 
     def get_options(self):
-        self.options = os.listdir(os.path.join(ROOT_PATH, 'games'))
-        self.options.remove('README.txt')
+        if DRIVE == False:
+            self.options = os.listdir(os.path.join(ROOT_PATH, 'games'))
+            self.options.remove('README.txt')
+        else:
+            self.DEVICE = os.listdir('/media')[0]
+            self.options = os.listdir(os.path.join('/media', self.DEVICE, 'games'))
+            self.options.remove('README.txt')
+            
         self.games = len(self.options)
         if self.games > 4:
             self.games = 4

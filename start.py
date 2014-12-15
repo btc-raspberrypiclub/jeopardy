@@ -63,8 +63,9 @@ if __name__ == '__main__':
     # main MUST be imported here, or config options may be imported
     # (via 'from config import X') prior to being overridden by argv 
     # options.
-    from jeoparpy.main import main
     from jeoparpy.selectMenu import *
     select_game()
+    
+    from jeoparpy.main import main
     main(*flags)
     print config.DRIVE
