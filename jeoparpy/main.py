@@ -27,10 +27,12 @@ from config import FPS_LIMIT, FULLSCREEN, SUBTRACT_ON_INCORRECT, SCREEN_SIZE
 from constants import ANIMATIONEND, ANSWER_TIMEOUT, AUDIOEND, SKIP_INTRO_FLAG
 from game import GameData, JeopGameState
 from ui import Controller, do_congrats, do_credits, do_intro, do_scroll
+import button
 
 EVENTS_ALLOWED = (ANIMATIONEND, ANSWER_TIMEOUT,
                   AUDIOEND, KEYDOWN, MOUSEBUTTONDOWN, QUIT)
 
+buzzers = button.Poll()
 ###############################################################################
 def main(*flags):
     """Main game loop and event handling."""
@@ -49,7 +51,7 @@ def main(*flags):
     gs = JeopGameState()
     uicontroller = Controller(screen, gameData, FPS_LIMIT)
     clock = pygame.time.Clock()
-
+    
     # Intro sequence (control passed completely to functions)
     if SKIP_INTRO_FLAG not in flags:
         pygame.mouse.set_visible(0)
@@ -66,6 +68,8 @@ def main(*flags):
     while not gs.state == gs.GAME_END:
         # Events
         handle_events(gs, gameData, uicontroller)
+        handle_buzzers(gs, gameData)
+        
         if gs.state == gs.QUIT:
             pygame.quit()
             sys.exit()
@@ -87,6 +91,15 @@ def main(*flags):
     pygame.mouse.set_visible(0)
     do_congrats(screen, clock, gameData.winners, uicontroller.audioplayer)
     do_credits(screen, clock, uicontroller.audioplayer, FPS_LIMIT)
+
+def handle_buzzers(gameState, gameData):
+    gs = gameState
+
+    if gs.state == gs.WAIT_BUZZ_IN and buzzers.check() != '':
+        p = buzzers.first
+        if not gameData.players[p].hasAnswered:
+            gs.set(gs.BUZZ_IN, playerI=p, amount=gs.kwargs['amount'])
+        buzzers.reset()
     
 ###############################################################################
 def handle_events(gameState, gameData, uicontroller):
