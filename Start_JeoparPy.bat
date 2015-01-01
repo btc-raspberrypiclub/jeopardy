@@ -1,1 +1,0 @@
-python -OO start.py

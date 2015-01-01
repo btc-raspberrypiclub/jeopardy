@@ -28,7 +28,7 @@ of source code from this file.
 # (1280, 800), (1440, 900), (1680, 1050), (1920, 1200)
 #
 # It is not recommended to use a resolution higher than (1920, 1200).
-SCREEN_W, SCREEN_H = SCREEN_SIZE = (1280, 720)
+SCREEN_W, SCREEN_H = SCREEN_SIZE = (1024, 576)
 
 # This setting controls whether the game is run in fullscreen or windowed
 # mode. (1 for fullscreen, 0 for windowed).
