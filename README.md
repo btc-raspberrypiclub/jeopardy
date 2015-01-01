@@ -1,15 +1,15 @@
 #Jeopardy Pi Edition
-Pi Jeopardy on your Raspberry Pi
+Play Jeopardy on your Raspberry Pi
 
 ##Setup
 How to get Jeopardy running on your Raspberry Pi
 
 ###Hardware
-Follow these instructions:
+Follow these instructions:</br>
 http://hackaday.io/project/3721/instructions
 
 ###Software
-Follow these instructions:
+Follow these instructions:</br>
 http://hackaday.io/project/3721-game-show-emulator/log/12365
 
 #Note:
