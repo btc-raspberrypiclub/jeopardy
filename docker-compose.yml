@@ -15,6 +15,7 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
     environment:
       - DISPLAY=$DISPLAY
+    privileged: true
 
   app:
     image: ghcr.io/btc-raspberrypiclub/jeopardy:latest
@@ -24,4 +25,5 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
     environment:
       - DISPLAY=$DISPLAY
+    privileged: true
 
