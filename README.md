@@ -21,3 +21,5 @@ http://hackaday.io/project/3721-game-show-emulator/log/12365
 This software is designed to be used with the Raspberry Pi. If you would like to run Jeopardy on a Windows or Ubuntu please use Adam Beagle's <a href='https://github.com/adambeagle/jeoparpy'>jeoparpy software</a>. 
 
 Also, to use the X11 system from within a container, see this [Medium article](https://medium.com/geekculture/run-a-gui-software-inside-a-docker-container-dce61771f9).
+
+WARNING!!! This repo is under rapid development as we move it to modern Python and put it into a container image to more easily be run and maintained.
