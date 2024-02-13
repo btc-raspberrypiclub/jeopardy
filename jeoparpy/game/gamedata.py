@@ -14,8 +14,8 @@ of source code from this file.
 """
 from sys import stderr
 
-from constants import AMOUNTS_PATH, CATEGORIES_PATH, CLUES_PATH, PLAYERS_PATH
-from jeopplayer import JeopPlayer
+from .constants import AMOUNTS_PATH, CATEGORIES_PATH, CLUES_PATH, PLAYERS_PATH
+from .jeopplayer import JeopPlayer
 from ..config import SUBTRACT_ON_INCORRECT
 from ..util import get_stripped_nonempty_file_lines, to_numeric
 

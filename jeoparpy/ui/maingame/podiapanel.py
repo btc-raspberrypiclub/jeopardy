@@ -16,8 +16,8 @@ of source code from this file.
 """
 import pygame
 
-from jeopgamesfc import JeopGameSurface
-from podium import Podium
+from .jeopgamesfc import JeopGameSurface
+from .podium import Podium
 from ..resmaps import FONTS, IMAGES
 
 

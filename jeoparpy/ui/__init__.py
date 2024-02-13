@@ -16,8 +16,8 @@ USAGE:
 CUSTOMIZATION:
   See instructions in config.py and resmaps.py.
 """
-from categoryscroll import do_scroll
-from congrats import do_congrats
-from controller import Controller
-from credits import do_credits
-from intro import do_intro
+from .categoryscroll import do_scroll
+from .congrats import do_congrats
+from .controller import Controller
+from .credits import do_credits
+from .intro import do_intro

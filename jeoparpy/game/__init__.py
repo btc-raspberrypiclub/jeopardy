@@ -15,5 +15,5 @@ CUSTOMIZATION:
   See the "Customization" section of the README for details on how to
   alter the resource files from which the game data is built.
 """
-from gamedata import GameData
-from gamestate import JeopGameState
+from .gamedata import GameData
+from .gamestate import JeopGameState

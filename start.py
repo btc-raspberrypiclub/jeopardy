@@ -68,4 +68,4 @@ if __name__ == '__main__':
     
     from jeoparpy.main import main
     main(*flags)
-    print config.DRIVE
+    print(config.DRIVE)

@@ -19,9 +19,9 @@ of source code from this file..
 """
 import pygame
 
-from constants import JEOP_BLUE
-from resmaps import FONTS
-from util import scale
+from .constants import JEOP_BLUE
+from .resmaps import FONTS
+from .util import scale
 
 def do_congrats(screen, clock, winners, audioPlayer):
     """

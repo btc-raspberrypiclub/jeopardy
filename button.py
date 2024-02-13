@@ -11,8 +11,8 @@ class Poll():
         #Setup pins and board
         gpio.setmode(gpio.BCM)
         gpio.setup(22, gpio.IN, pull_up_down=gpio.PUD_UP)
-	gpio.setup(4, gpio.IN, pull_up_down=gpio.PUD_UP)
-	gpio.setup(17, gpio.IN, pull_up_down=gpio.PUD_UP)
+        gpio.setup(4, gpio.IN, pull_up_down=gpio.PUD_UP)
+        gpio.setup(17, gpio.IN, pull_up_down=gpio.PUD_UP)
 
         #Put pins in variables
         self.center_button = 22
@@ -92,4 +92,4 @@ if __name__ == '__main__':
     while True:
         test.first = ''
         winner = test.poll()
-    print winner
+        print(winner)

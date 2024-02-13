@@ -17,7 +17,7 @@ from random import shuffle
 
 import pygame
 
-from jeopgamesfc import JeopGameSurface
+from .jeopgamesfc import JeopGameSurface
 from ..constants import JEOP_BLUE
 from ..resmaps import FONTS
 from ..util import (autofit_text, BorderedBox, draw_centered_textblock,
