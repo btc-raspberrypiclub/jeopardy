@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+
+  # Building and testing environment
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ghcr.io/btc-raspberrypiclub/jeopardy:latest
+    stdin_open: true
+    tty: true
+    command: ["/bin/bash"]
+    volumes:
+      - ${PWD}:/app
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    environment:
+      - DISPLAY=$DISPLAY
+
+  app:
+    image: ghcr.io/btc-raspberrypiclub/jeopardy:latest
+    stdin_open: true
+    tty: true
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    environment:
+      - DISPLAY=$DISPLAY
+
