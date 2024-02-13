@@ -2,6 +2,11 @@
 # This needs to be updated to Python 3.8.5 or later after the project is updated
 FROM python:2.7.18-buster
 
+# Set some basic image metadata
+LABEL org.opencontainers.image.description = "A Jeopardy game for the Raspberry Pi"
+LABEL org.opencontainers.image.source=https://github.com/btc-raspberrypiclub/jeopardy
+LABEL org.opencontainers.image.licenses=GPL3
+
 # Set the working directory for installations
 WORKDIR /app
 
