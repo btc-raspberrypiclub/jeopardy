@@ -1,6 +1,4 @@
-# The original project is very old and still uses Python 2.7.18
-# This needs to be updated to Python 3.8.5 or later after the project is updated
-FROM python:2.7.18-buster
+FROM python:3.11.8-bullseye
 
 # Set some basic image metadata
 LABEL org.opencontainers.image.description = "A Jeopardy game for the Raspberry Pi"
