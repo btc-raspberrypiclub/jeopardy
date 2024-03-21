@@ -168,7 +168,7 @@ def _fade_in_title(screen, background, text, textRect, bannerColor, clock):
     fpsGoal = int(255 / 7.8) #frames to draw / time to spend in secs
 
     pygame.time.delay(2000)
-    for alpha in xrange(256):
+    for alpha in range(256):
         background.fill(bannerColor, textRect)
         text.set_alpha(alpha)
         background.blit(text, textRect)

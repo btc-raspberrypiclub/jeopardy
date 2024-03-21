@@ -134,7 +134,7 @@ class GameState(Enum):
                 type(val).__name__), val)
 
         # Verify state within valid range of defined states
-        if val not in xrange(self._numStates):
+        if val not in range(self._numStates):
             raise StateSetError("Set of 'State' attempted with value " +
                 "that has no assigned state.", val)
         

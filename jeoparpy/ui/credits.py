@@ -281,7 +281,7 @@ def _scroll_credits(screen, scrRect, clock, lines, numFrames, step, fpsLimit):
     screen.fill(JEOP_BLUE)
     bg = screen.copy()
     
-    for frame in xrange(numFrames):
+    for frame in range(numFrames):
         lines.update(step, scrRect.h)
         lines.clear(screen, bg)
         lines.draw(screen)

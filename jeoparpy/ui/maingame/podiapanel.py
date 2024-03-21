@@ -85,7 +85,7 @@ class PodiaPanel(JeopGameSurface):
         fonts = (('team1', 42), ('team2', 33), ('team3', 40))
         fonts = tuple((FONTS[n], s) for n,s in fonts)
 
-        for i in xrange(3):
+        for i in range(3):
             p = Podium(i, img, scalar, gameData.players[i].name,
                        fonts[i], nameBounds, podia)
 

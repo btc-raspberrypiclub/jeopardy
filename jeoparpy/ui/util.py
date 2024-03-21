@@ -201,7 +201,7 @@ def get_size_textblock(lines, font, spacing):
     blockW = 0
     blockH = 0
 
-    if isinstance(lines, basestring):
+    if isinstance(lines, str):
         lines = [lines]
 
     for line in lines:
@@ -332,7 +332,7 @@ class BorderedBox(pygame.Surface):
             val = 4*[val]
 
         try:
-            for i in xrange(4):
+            for i in range(4):
                 ws.append(to_numeric(val[i]))
         except IndexError:
             raise BorderError("'borderW' contains ")

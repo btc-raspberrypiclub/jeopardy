@@ -96,7 +96,7 @@ class OpenClueAnimation(pygame.sprite.DirtySprite):
         self._startRect = self.rect.copy()
 
         self._moveAmts = tuple(self._endRect[i] - self.rect[i]
-                               for i in xrange(4))
+                               for i in range(4))
 
     def _is_animation_done(self):
         return self._frame == self._frameGoal

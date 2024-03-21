@@ -103,7 +103,7 @@ def _fade_in_sfc(screen, sfc, clock, time):
     fpsGoal = int(255.0 / time) # frames to draw / time to spend in secs
     sfc.fill(JEOP_BLUE)
     
-    for alpha in xrange(256):
+    for alpha in range(256):
         sfc.set_alpha(alpha)
         screen.blit(lastScreen, (0, 0))
         screen.blit(sfc, (0, 0))
