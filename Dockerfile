@@ -15,7 +15,7 @@ RUN apt update && apt install -y \
     libsdl2-image-dev libsdl2-image-2.0-0 \
     libmikmod-dev libfishsound1-dev libsmpeg-dev liboggz2-dev \
     libflac-dev libfluidsynth-dev libsdl2-mixer-dev libsdl2-mixer-2.0-0 \
-    libfreetype6-dev libsdl2-ttf-dev libsdl2-ttf-2.0-0
+    libfreetype6-dev libsdl2-ttf-dev libsdl2-ttf-2.0-0 pipewire
 
 # Add our python requirements file to the working directory
 ADD requirements.txt .
