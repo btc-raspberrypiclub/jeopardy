@@ -1,4 +1,4 @@
-version: '3.8'
+
 services:
 
   # Building and testing environment
@@ -14,7 +14,7 @@ services:
       - ${PWD}:/app
       - /tmp/.X11-unix:/tmp/.X11-unix
     environment:
-      - DISPLAY=$DISPLAY
+      - DISPLAY=${DISPLAY:-:0}
     privileged: true
 
   app:
@@ -24,6 +24,6 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
     environment:
-      - DISPLAY=$DISPLAY
+      - DISPLAY=${DISPLAY:-:0}
     privileged: true
 
