@@ -1,4 +1,5 @@
-pygame==1.9.6
+#pygame==1.9.6
+pygame==2.5.2
 RPi.GPIO==0.7.1
 # GPIO Emulator
 # RPi @ git+https://github.com/nosix/raspberry-gpio-emulator/@891462c30064141bca3e5d7aa7f4c46cca99a7eb
