@@ -11,7 +11,7 @@ services:
     tty: true
     command: ["/bin/bash"]
     volumes:
-      - ${PWD}:/app
+      #- ${PWD}:/app
       - /tmp/.X11-unix:/tmp/.X11-unix
     environment:
       - DISPLAY=${DISPLAY:-:0}
@@ -27,5 +27,6 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
     environment:
       - DISPLAY=${DISPLAY:-:0}
+      - PW_AUDIO_MODULE=pipewire
     privileged: true
 
