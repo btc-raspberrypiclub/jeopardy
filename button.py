@@ -10,9 +10,9 @@ class Poll():
 
         #Setup pins and board
         gpio.setmode(gpio.BCM)
-        gpio.setup(22, gpio.IN, pull_up_down=gpio.PUD_UP)
-	gpio.setup(4, gpio.IN, pull_up_down=gpio.PUD_UP)
-	gpio.setup(17, gpio.IN, pull_up_down=gpio.PUD_UP)
+        gpio.setup(22, gpio.IN, pull_up_down=gpio.PUD_DOWN)
+        gpio.setup(4, gpio.IN, pull_up_down=gpio.PUD_DOWN)
+        gpio.setup(17, gpio.IN, pull_up_down=gpio.PUD_DOWN)
 
         #Put pins in variables
         self.center_button = 22
@@ -50,7 +50,7 @@ class Poll():
         center_input = gpio.input(self.center_button)
         left_input = gpio.input(self.left_button)
         right_input = gpio.input(self.right_button)
-        if center_input == True:
+        if center_input == gpio.HIGH:
             if self.center_press > 0:
                 if self.DEBUG:
                     print('ADMIN: Console button 2 has been pressed')
@@ -62,7 +62,7 @@ class Poll():
             self.center_press += 1
 
         #Right buttons stuff
-        if right_input == True:
+        if right_input == gpio.HIGH:
             if self.right_press > 0:
                 if self.DEBUG:
                     print('ADMIN: Console button 3 has been pressed')
@@ -74,7 +74,7 @@ class Poll():
             self.right_press += 1
 
         #Left button stuff
-        if left_input == True:
+        if left_input == gpio.HIGH:
             if self.left_press > 0:
                 if self.DEBUG:
                     print('ADMIN: Console button 1 has been pressed')
@@ -92,4 +92,4 @@ if __name__ == '__main__':
     while True:
         test.first = ''
         winner = test.poll()
-    print winner
+        print(winner)

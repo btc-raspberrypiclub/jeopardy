@@ -17,7 +17,7 @@ from random import shuffle
 
 import pygame
 
-from jeopgamesfc import JeopGameSurface
+from .jeopgamesfc import JeopGameSurface
 from ..constants import JEOP_BLUE
 from ..resmaps import FONTS
 from ..util import (autofit_text, BorderedBox, draw_centered_textblock,
@@ -63,8 +63,8 @@ class GameBoard(JeopGameSurface):
 
         if gs.state == gs.BOARD_FILL:
             self._amtFont = pygame.font.Font(FONTS['amount'], self._scale(48))
-            self._coordsStack = [(c, r) for c in xrange(len(self._boxes))
-                                for r in xrange(len(self._boxes[0]) - 1)]
+            self._coordsStack = [(c, r) for c in range(len(self._boxes))
+                                for r in range(len(self._boxes[0]) - 1)]
             shuffle(self._coordsStack)
             
         elif gs.state == gs.WAIT_BOARD_FILL:
@@ -128,7 +128,7 @@ class GameBoard(JeopGameSurface):
                              (borderW, borderW, catBottomBorder, borderW),
                              (0, 0, 0))
 
-        for col in xrange(nCols):
+        for col in range(nCols):
             colBoxes = []
 
             if col == nCols - 1:
@@ -142,7 +142,7 @@ class GameBoard(JeopGameSurface):
             catBox.rect.topleft = (boxW*col, 0)
             colBoxes.append(catBox.copy())
 
-            for row in xrange(1, nRows):
+            for row in range(1, nRows):
                 clueBox.rect.topleft = (boxW*col, boxH*row)
                 colBoxes.append(clueBox.copy())
 

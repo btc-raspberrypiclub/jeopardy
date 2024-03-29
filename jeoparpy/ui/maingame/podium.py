@@ -16,8 +16,8 @@ of source code from this file.
 """
 import pygame
 
-from jeopgamesfc import JeopGameSurface
-from util import Timer
+from .jeopgamesfc import JeopGameSurface
+from .util import Timer
 from ..constants import JEOP_BLUE
 from ..resmaps import FONTS, IMAGES
 from ..util import (autofit_text, draw_centered_textblock,

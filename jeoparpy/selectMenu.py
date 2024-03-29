@@ -3,8 +3,8 @@
 
 import pygame, sys, os
 from pygame.locals import *
-from constants import ROOT_PATH
-from config import DRIVE
+from .constants import ROOT_PATH
+from .config import DRIVE
 
 pygame.init()
 
@@ -62,7 +62,7 @@ class Select_Game():
         if self.games > 4:
             self.games = 4
         if self.games < 1:
-            print 'You must have a game in the /games directory!'
+            print('You must have a game in the /games directory!')
             pygame.quit()
             sys.exit()
 

@@ -23,9 +23,9 @@ from sys import exit as sysexit
 import pygame
 from pygame.locals import QUIT, KEYDOWN, K_q
 
-from constants import JEOP_BLUE
-from resmaps import FONTS, IMAGES
-from util import get_anim_data, scale, shadow_text
+from .constants import JEOP_BLUE
+from .resmaps import FONTS, IMAGES
+from .util import get_anim_data, scale, shadow_text
 
 ###############################################################################
 class CreditLine(pygame.sprite.DirtySprite):
@@ -281,7 +281,7 @@ def _scroll_credits(screen, scrRect, clock, lines, numFrames, step, fpsLimit):
     screen.fill(JEOP_BLUE)
     bg = screen.copy()
     
-    for frame in xrange(numFrames):
+    for frame in range(numFrames):
         lines.update(step, scrRect.h)
         lines.clear(screen, bg)
         lines.draw(screen)

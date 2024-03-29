@@ -1,6 +1,4 @@
-# The original project is very old and still uses Python 2.7.18
-# This needs to be updated to Python 3.8.5 or later after the project is updated
-FROM python:2.7.18-buster
+FROM python:3.11.8-bullseye
 
 # Set some basic image metadata
 LABEL org.opencontainers.image.description = "A Jeopardy game for the Raspberry Pi"
@@ -9,6 +7,15 @@ LABEL org.opencontainers.image.licenses=GPL3
 
 # Set the working directory for installations
 WORKDIR /app
+
+# Install OS packages
+RUN apt update && apt install -y \
+    libsdl2-dev libsdl2-2.0-0 \
+    libjpeg-dev libpng-dev libwebp-dev libtiff-dev \
+    libsdl2-image-dev libsdl2-image-2.0-0 \
+    libmikmod-dev libfishsound1-dev libsmpeg-dev liboggz2-dev \
+    libflac-dev libfluidsynth-dev libsdl2-mixer-dev libsdl2-mixer-2.0-0 \
+    libfreetype6-dev libsdl2-ttf-dev libsdl2-ttf-2.0-0 pipewire
 
 # Add our python requirements file to the working directory
 ADD requirements.txt .

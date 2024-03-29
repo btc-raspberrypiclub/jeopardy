@@ -14,8 +14,8 @@ of source code from this file.
 """
 from sys import stderr
 
-from constants import AMOUNTS_PATH, CATEGORIES_PATH, CLUES_PATH, PLAYERS_PATH
-from jeopplayer import JeopPlayer
+from .constants import AMOUNTS_PATH, CATEGORIES_PATH, CLUES_PATH, PLAYERS_PATH
+from .jeopplayer import JeopPlayer
 from ..config import SUBTRACT_ON_INCORRECT
 from ..util import get_stripped_nonempty_file_lines, to_numeric
 
@@ -122,7 +122,7 @@ class GameData(object):
         elif len(playerNames) < 3:
             missing = 3 - len(playerNames)
             playerNames += tuple('Player ' + str(i + 2)
-                                 for i in xrange(missing))
+                                 for i in range(missing))
         
         return tuple(JeopPlayer(name) for name in playerNames)
 
@@ -137,8 +137,8 @@ class GameData(object):
         ((Category 1 clues), (Category 2 clues), ...))
         """
         mapped = []
-        numPerCat = len(clues) / numCategories
-        for c in xrange(numCategories):
+        numPerCat = int(len(clues) / numCategories)
+        for c in range(numCategories):
             start = c*numPerCat
             mapped.append(tuple(clues[start:start + numPerCat]))
 

@@ -104,7 +104,7 @@ class GameState(Enum):
         self.kwargs.update(kwargs)
         
         if DEBUG and self.kwargs:
-            print 'State args set: {0}'.format(self.kwargs)
+            print('State args set: {0}'.format(self.kwargs))
         
     def _verify_transition(self, newState):
         """
@@ -134,7 +134,7 @@ class GameState(Enum):
                 type(val).__name__), val)
 
         # Verify state within valid range of defined states
-        if val not in xrange(self._numStates):
+        if val not in range(self._numStates):
             raise StateSetError("Set of 'State' attempted with value " +
                 "that has no assigned state.", val)
         
@@ -145,7 +145,7 @@ class GameState(Enum):
         self.kwargs = {}
         
         if DEBUG:
-            print "State change: {0}".format(self)
+            print("State change: {0}".format(self))
 
 class JeopGameState(GameState):
     """

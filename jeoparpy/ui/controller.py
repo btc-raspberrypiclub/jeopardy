@@ -15,8 +15,8 @@ of source code from this file.
 """
 import pygame
 
-from audioplayer import JeopAudioPlayer
-from maingame import Clue, GameBoard, OpenClueAnimation, PodiaPanel
+from .audioplayer import JeopAudioPlayer
+from .maingame import Clue, GameBoard, OpenClueAnimation, PodiaPanel
 from ..config import DEBUG
 from ..constants import AUDIOEND
 
@@ -68,7 +68,7 @@ class Controller(object):
         for sfc in self._sfcs:
             if sfc.dirty:
                 if DEBUG:
-                    print 'draw %s' % type(sfc).__name__
+                    print('draw %s' % type(sfc).__name__)
 
                 if isinstance(sfc, pygame.sprite.Sprite):
                     screen.blit(sfc.image, sfc.rect)
