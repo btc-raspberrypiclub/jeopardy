@@ -16,6 +16,8 @@ services:
     environment:
       - DISPLAY=${DISPLAY:-:0}
     privileged: true
+    profiles:
+      - build
 
   app:
     image: ghcr.io/btc-raspberrypiclub/jeopardy:latest

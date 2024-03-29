@@ -6,6 +6,10 @@ Play Jeopardy on your Raspberry Pi
 
 How to get Jeopardy running on your Raspberry Pi
 
+- install docker
+- create a copy of the `docker-compose.yml` file
+- run `docker compose up`
+
 ### Hardware
 
 Follow these instructions:</br>
@@ -15,6 +19,12 @@ http://hackaday.io/project/3721/instructions
 
 Follow these instructions:</br>
 http://hackaday.io/project/3721-game-show-emulator/log/12365
+
+## Building
+
+To build the container image localy:
+
+    docker compose --profile build build
 
 ## Notes
 
