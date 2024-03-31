@@ -24,7 +24,7 @@ http://hackaday.io/project/3721-game-show-emulator/log/12365
 
 To build the container image localy:
 
-    docker compose --profile build build
+    docker compose --profile develop build
 
 ## Notes
 
