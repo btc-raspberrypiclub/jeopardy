@@ -26,6 +26,10 @@ To build the container image localy:
 
     docker compose --profile develop build
 
+To run the `develop` profile image with debuggig enabled:
+
+    docker compose --profile develop up dev
+
 ## Notes
 
 This software is designed to be used with the Raspberry Pi. If you would like to run Jeopardy on a Windows or Ubuntu please use Adam Beagle's <a href='https://github.com/adambeagle/jeoparpy'>jeoparpy software</a>. 
