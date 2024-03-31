@@ -9,15 +9,17 @@ services:
     image: ghcr.io/btc-raspberrypiclub/jeopardy:latest
     stdin_open: true
     tty: true
-    command: ["/bin/bash"]
     volumes:
       #- ${PWD}:/app
       - /tmp/.X11-unix:/tmp/.X11-unix
     environment:
       - DISPLAY=${DISPLAY:-:0}
+    devices:
+      - /dev/snd:/dev/snd
     privileged: true
     profiles:
-      - build
+      - develop
+    command: ["/usr/local/bin/python","-vvvv", "start.py"]
 
   app:
     image: ghcr.io/btc-raspberrypiclub/jeopardy:latest
