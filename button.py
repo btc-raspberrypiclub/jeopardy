@@ -10,7 +10,6 @@ class Poll():
 
         #Setup pins and board
         gpio.setmode(gpio.BCM)
-<<<<<<< HEAD
         #Pin 22 is Team 2
         gpio.setup(22, gpio.IN, pull_up_down=gpio.PUD_DOWN)
         #Pin 4 is Team 3
@@ -18,11 +17,6 @@ class Poll():
         #Pin 17 is Team 1
         gpio.setup(17, gpio.IN, pull_up_down=gpio.PUD_DOWN)
         #GPIO Needs to be setup between 3.3v and pins above
-=======
-        gpio.setup(22, gpio.IN, pull_up_down=gpio.PUD_DOWN)
-        gpio.setup(4, gpio.IN, pull_up_down=gpio.PUD_DOWN)
-        gpio.setup(17, gpio.IN, pull_up_down=gpio.PUD_DOWN)
->>>>>>> master
 
         #Put pins in variables
         self.center_button = 22
