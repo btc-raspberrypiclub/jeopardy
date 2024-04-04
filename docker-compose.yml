@@ -10,21 +10,14 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - ${PWD}:/app
+      #- ${PWD}:/app
       - /tmp/.X11-unix:/tmp/.X11-unix
     # Bring the DISPLAY through from the host
     environment:
       - DISPLAY=${DISPLAY:-:0}
-    devices:
-      - /dev/snd:/dev/snd
     privileged: true
-    # This service can only be interacted with by specifying 
-    # '--profile develop' on the commandline, otherwise it is ignored
     profiles:
-      - develop
-    # Running python in verbose mode helps debugging
-    command: ["/usr/local/bin/python","-vvvv", "start.py"]
-
+      - build
 
   # The actual application service for live 
   app:
