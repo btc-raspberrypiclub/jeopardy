@@ -114,13 +114,13 @@ class GameData(object):
 
     def _build_players_from_file(self, path):
         playerNames = get_stripped_nonempty_file_lines(path)
-        if len(playerNames) > 3:
-            playerNames = playerNames[:3]
+        if len(playerNames) > 5:
+            playerNames = playerNames[:5]
             print >>stderr, ("WARNING: Too many players provided. " +
                              "Extraneous player names ignored. " +
                              "Bad file: %s" % path)
-        elif len(playerNames) < 3:
-            missing = 3 - len(playerNames)
+        elif len(playerNames) < 5:
+            missing = 5 - len(playerNames)
             playerNames += tuple('Player ' + str(i + 2)
                                  for i in range(missing))
         
