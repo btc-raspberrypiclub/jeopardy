@@ -1,0 +1,27 @@
+These files were generated useing onshape and pulling down form freely avalible repositorys
+
+Below is a link to the onshape document for viewing
+https://cad.onshape.com/documents/b294594e3ef498876286486e/w/6dfe97e1300749bfcd556d75/e/6da281675e27081cb1c0d4b1?renderMode=0&uiState=6619a61e1a1af63ded36f60c
+
+the cad models contained in this folder are used to hold a broken out 4 pin gpio pin header
+the relevant pins connect to rj11 keystone terminals along with 3.3 volt power, and 12 volt positive and minus connections
+the 12 volt wires are used to power the light in the buttons for the contestants. 
+the standard connection for the rj11 cabling has the gpio and 3.3 volts in the center of the cable
+the 12 volt connection is consistantly connected to the outside conductors on the keystone jack. 
+On both sides it is important that the 12 volt positive and minus are consistant to ensure lights in the buttons are hooked up correctly. 
+the 12 volt adapter is held in place using hot glue. 
+the gpio used for the 5 terminals currently conencted are as follows
+gpio 4 is connected to player 1
+gpio 17 is connected to player 2
+gpio 27 is connected to player 3
+gpio 22 is connected to player 4
+gpio 5 is connceted to player 5
+
+currently the game does not have code that supports 5 players though this is in the works so support was added for that expansion
+
+Attached files for breakout box are "breakout box lid" and "breakout box base" 
+included are 3MF, STL and STEP files for easier use with slicing software or to add your own modifications using cad software (STEP file)
+
+Also attached are several images of the breakout box exterior as a completed unit
+
+Button box models will be included as well in a future update. these are files used for lazer cutting. 
