@@ -1,7 +1,7 @@
 
 services:
 
-  # Building and testing environment
+  # Developing and testing environment
   dev:
     build:
       context: .
@@ -9,16 +9,17 @@ services:
     image: ghcr.io/btc-raspberrypiclub/jeopardy:latest
     stdin_open: true
     tty: true
-    command: ["/bin/bash"]
     volumes:
       #- ${PWD}:/app
       - /tmp/.X11-unix:/tmp/.X11-unix
+    # Bring the DISPLAY through from the host
     environment:
       - DISPLAY=${DISPLAY:-:0}
     privileged: true
     profiles:
       - build
 
+  # The actual application service for live 
   app:
     image: ghcr.io/btc-raspberrypiclub/jeopardy:latest
     stdin_open: true

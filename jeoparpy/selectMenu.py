@@ -12,7 +12,7 @@ WINDOWWIDTH = 600
 WINDOWHIEGHT = 500
 os.environ ['SDL_VIDEO_WINDOW_POS'] = 'center'
 windowSurface = pygame.display.set_mode((WINDOWWIDTH, WINDOWHIEGHT), 0, 32)
-pygame.display.set_caption('Select Game')
+pygame.display.set_caption('Jeopardy')
 mainClock = pygame.time.Clock()
 
 class Select_Game():
@@ -27,10 +27,7 @@ class Select_Game():
         #Setup select game text
         pygame.Surface.set_alpha(self.screen)
         self.jeopFont = pygame.font.Font(os.path.join(ROOT_PATH, 'res', 'fonts', 'gyparody.ttf'), 53)
-        self.selectText = self.jeopFont.render('Select Game', True, self.WHITE)
-        self.selectRect = self.selectText.get_rect()
-        self.selectRect.centerx = 300
-        self.selectRect[1] = 70
+
                
         #Setup Background Image
         self.backgroundImage = pygame.image.load(os.path.join(ROOT_PATH,'res', 'images', 'introbg.png'))
@@ -40,7 +37,6 @@ class Select_Game():
 
         self.screen.blit(self.backgroundImage, self.backgroundRect)
 
-        self.screen.blit(self.selectText, self.selectRect)
         
     def main(self, event=None):        
         #Blit Selection
