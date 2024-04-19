@@ -23,7 +23,7 @@ from pygame.locals import *
 import os
 import sys
 
-from .config import FPS_LIMIT, FULLSCREEN, SUBTRACT_ON_INCORRECT, SCREEN_SIZE
+from .config import FPS_LIMIT, FULLSCREEN, PLAYER_NUM, SUBTRACT_ON_INCORRECT, SCREEN_SIZE
 from .constants import ANIMATIONEND, ANSWER_TIMEOUT, AUDIOEND, SKIP_INTRO_FLAG
 from .game import GameData, JeopGameState
 from .ui import Controller, do_congrats, do_credits, do_intro, do_scroll
@@ -161,7 +161,9 @@ def handle_event_key(event, gameState, gameData):
     elif gs.state == gs.WAIT_TRIGGER_AUDIO and event.key == K_m:
         gs.set(gs.PLAY_CLUE_AUDIO, coords=gs.kwargs['coords'])
 
-    elif gs.state == gs.WAIT_BUZZ_IN and event.key in (K_1, K_2, K_3):
+    # Check if the state is WAIT_BUZZ_IN, and the key is a number coresponding to a player
+    elif gs.state == gs.WAIT_BUZZ_IN and event.key in range(K_1, K_1 + PLAYER_NUM):
+        # Get player id from key
         p = event.key - K_1
         if not gameData.players[p].hasAnswered:
             gs.set(gs.BUZZ_IN, playerI=p, amount=gs.kwargs['amount'])

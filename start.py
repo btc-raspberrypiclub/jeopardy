@@ -44,7 +44,7 @@ optionsMap = {
     '--skip-intro' : SKIP_INTRO_FLAG,
     '-w'           : WINDOWED_FLAG,
     '--windowed'   : WINDOWED_FLAG,
-    '--drive'       : DRIVE_FLAG,
+    '--drive'      : DRIVE_FLAG,
 }
 
 if __name__ == '__main__':
