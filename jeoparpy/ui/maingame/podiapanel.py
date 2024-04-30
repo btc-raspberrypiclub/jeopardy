@@ -20,6 +20,7 @@ from .jeopgamesfc import JeopGameSurface
 from .podium import Podium
 from ..resmaps import FONTS, IMAGES
 
+from ...config import PLAYER_NUM
 
 class PodiaPanel(JeopGameSurface):
     """
@@ -72,11 +73,17 @@ class PodiaPanel(JeopGameSurface):
 
     def _init_background(self):
         img = pygame.image.load(IMAGES['rPanelBG']).convert()
+
         sizeScalar = float(self.size[1]) / img.get_size()[1]
+
+        # Change the scalar depending on the number of players
+        # NOTE: I don't really know why this involves a 3
+        sizeScalar = sizeScalar * (3 / PLAYER_NUM)
+
         img = pygame.transform.scale(img, self.size)
         self.blit(img, (0, 0))
 
-        return sizeScalar * .75
+        return sizeScalar
 
     def _init_podia(self, gameData, scalar):
         podia = pygame.sprite.OrderedUpdates()
@@ -85,15 +92,15 @@ class PodiaPanel(JeopGameSurface):
         fonts = (('team1', 42), ('team2', 33), ('team3', 40), ('team1', 42), ('team2', 33))
         fonts = tuple((FONTS[n], s) for n,s in fonts)
 
-        for i in range(5):
+        for i in range(PLAYER_NUM):
             p = Podium(i, img, scalar, gameData.players[i].name,
                        fonts[i], nameBounds, podia)
 
         return self._position_podia(podia)
 
     def _position_podia(self, podia):
-        ph = podia.sprites()[0].rect.h - 10
-        padding = (self.size[1] - 5*ph) / 4
+        ph = podia.sprites()[0].rect.h
+        padding = (self.size[1] - PLAYER_NUM*ph) / 4
         y = padding
 
         for p in podia:

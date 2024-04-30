@@ -78,3 +78,6 @@ DEBUG = False
 
 #Flash drive
 DRIVE = False
+
+# The number of players
+PLAYER_NUM = 3

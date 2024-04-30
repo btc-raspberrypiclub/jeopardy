@@ -44,11 +44,40 @@ optionsMap = {
     '--skip-intro' : SKIP_INTRO_FLAG,
     '-w'           : WINDOWED_FLAG,
     '--windowed'   : WINDOWED_FLAG,
-    '--drive'       : DRIVE_FLAG,
+    '--drive'      : DRIVE_FLAG,
 }
 
 if __name__ == '__main__':
-    flags = set(optionsMap[o] for o in argv if o in optionsMap)
+    rawFlags = []
+
+    # Loop over args, add all args to rawFlags unless it is -n or the arg after it
+    i = 0
+    while i < len(argv):
+        if argv[i] == '-n':
+            i += 1
+            try:
+                num = int(argv[i])
+                if num < 3 or num > 5:
+                    print("Please specify a number of players from 3 to 5")
+                    print("Or, omit it and the number of players will default to 3")
+                    exit(1)
+            except ValueError:
+                print(f'{argv[i]} is not a valid number')
+                exit(1)
+
+            config.PLAYER_NUM = num
+
+        elif argv[i] in ('-h', '--help'):
+            print('Sorry, the help flag has not been implemented yet')
+            exit(0)
+
+        elif argv[i] in optionsMap:
+            rawFlags.append(optionsMap[argv[i]])
+
+        i += 1
+
+    # Get rid of duplicates
+    flags = set(rawFlags)
     
     # Override config options if args provided
     if FULLSCREEN_FLAG in flags:
